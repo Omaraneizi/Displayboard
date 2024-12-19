@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Equal Squares Layout</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(2, 50%);
+            width: 100vw;
+            height: 100vh;
+            border: 5px solid #333; /* Border for the entire grid */
+        }
+
+        .square {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #4CAF50; /* Default Green background */
+            font-size: 24px;
+            color: white;
+            position: relative;
+            border: 2px solid #fff; /* White border between squares */
+            box-sizing: border-box;
+        }
+
+        .square:nth-child(1) { background-color: #FF5733; } /* Red */
+        .square:nth-child(2) { background-color: #33C1FF; } /* Blue */
+        .square:nth-child(3) { background-color: #FF33A1; } /* Pink */
+        .square:nth-child(4) { background-color: #FFD700; } /* Yellow */
+
+        /* Square 2 - Google Sheets Embed */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Square 3 - Genially Embed */
+        .genially-embed-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .genially-embed-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Square 4 - Google Calendar Embed */
+        .calendar-container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .calendar-header {
+            background-color: #0073e6;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 3px solid #005bb5;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-top: 1px solid #f1f1f1;
+            border-radius: 0 0 10px 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Square 1 with Tomorrow.io Widget -->
+        <div class="square">
+            <script>
+                (function(d, s, id) {
+                    if (d.getElementById(id)) {
+                        if (window.__TOMORROW__) {
+                            window.__TOMORROW__.renderWidget();
+                        }
+                        return;
+                    }
+                    const fjs = d.getElementsByTagName(s)[0];
+                    const js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+                    fjs.parentNode.insertBefore(js, fjs);
+                })(document, 'script', 'tomorrow-sdk');
+            </script>
+
+            <div class="tomorrow"
+                data-location-id="112516"
+                data-language="EN"
+                data-unit-system="IMPERIAL"
+                data-skin="dark"
+                data-widget-type="upcoming"
+                style="padding-bottom:22px;position:relative;width:100%;height:100%;"
+            >
+                <a
+                    href="https://www.tomorrow.io/weather-api/"
+                    rel="nofollow noopener noreferrer"
+                    target="_blank"
+                    style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+                >
+                    <img
+                        alt="Powered by the Tomorrow.io Weather API"
+                        src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+                        width="250"
+                        height="18"
+                    />
+                </a>
+            </div>
+        </div>
+
+        <!-- Square 2 with Google Sheets Embed -->
+        <div class="square">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSYB_2ql97IVGmPzjJ2KlxQ-jdAFLlZiWGvbGoqwdM_rBX1xh9yeLXc-IM4Ar7PL2nl1hAGJdQ2i-A6/pubhtml?gid=145351090&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        </div>
+
+        <!-- Square 3 with Genially Embed -->
+        <div class="square">
+            <div class="genially-embed-container">
+                <!-- Genially Embed Script -->
+                <div id="6759f7aa616fda67af1d7cdc" class="genially-embed" style="width:100%; height:100%;"></div>
+
+                <script>
+                    (function (d) {
+                        var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0];
+                        if (d.getElementById(id)) { return; }
+                        js = d.createElement("script");
+                        js.id = id;
+                        js.async = true;
+                        js.src = "https://view.genially.com/static/embed/embed.js";
+                        ref.parentNode.insertBefore(js, ref);
+                    })(document);
+                </script>
+            </div>
+        </div>
+
+        <!-- Square 4 with Google Calendar Embed -->
+        <div class="square">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    My Google Calendar - Schedule View (Agenda)
+                </div>
+                <!-- Embed Google Calendar with agenda (schedule) view using iframe -->
+                <iframe src="https://calendar.google.com/calendar/embed?src=c_bf4fc9132ddecb788e2da6dffe71de37d673720d96f644ebe3b8f9039a903f12%40group.calendar.google.com&ctz=America%2FChicago&mode=AGENDA" 
+                        frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
